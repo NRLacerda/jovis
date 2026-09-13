@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil JOVIS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell profile-page">
+    <header class="profile-header">
+      <a class="logo logo-small" href="index.html"><span>JO</span><span class="gradient-text">VIS</span></a>
+      <button class="round-button" type="button" data-open-achievement="Explorador visual" aria-label="Abrir destaque do perfil">
+        <img class="icon" src="src/icons/notifications.svg" alt="" aria-hidden="true">
+      </button>
+    </header>
+
+    <main class="profile-content">
+      <section class="profile-hero reveal-on-load">
+        <img class="profile-avatar" src="src/images/profile-pic.jpeg" alt="Foto de perfil Jovis Explorer">
+        <div class="profile-copy">
+          <p class="eyebrow">Perfil publico</p>
+          <h1>Jovis Explorer</h1>
+          <p>Capturas do cotidiano, comparacoes uteis e descobertas feitas com a camera.</p>
+        </div>
+      </section>
+
+      <section class="profile-stats reveal-on-load" aria-label="Estatisticas do perfil">
+        <article>
+          <strong data-count-to="142">0</strong>
+          <span>Scans</span>
+        </article>
+        <article>
+          <strong data-count-to="38">0</strong>
+          <span>Salvos</span>
+        </article>
+        <article>
+          <strong data-count-to="12">0</strong>
+          <span>Posts</span>
+        </article>
+      </section>
+
+      <section class="profile-achievements reveal-on-load">
+        <h2 class="section-title">Conquistas</h2>
+        <div class="achievement-row">
+          <button type="button" data-open-achievement="Explorador visual" data-detail="Voce completou 100 scans e desbloqueou resumos mais detalhados.">
+            <span><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true"></span>
+            <strong>Explorador visual</strong>
+            <small>100+ scans</small>
+          </button>
+          <button type="button" data-open-achievement="Comparador esperto" data-detail="Voce salvou comparacoes de rotulos, produtos e imagens para revisar depois.">
+            <span><img class="icon" src="src/icons/analytics.svg" alt="" aria-hidden="true"></span>
+            <strong>Comparador esperto</strong>
+            <small>38 salvos</small>
+          </button>
+          <button type="button" data-open-achievement="Comunidade ativa" data-detail="Voce compartilhou descobertas e recebeu respostas da comunidade.">
+            <span><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true"></span>
+            <strong>Comunidade ativa</strong>
+            <small>12 posts</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="profile-gallery reveal-on-load">
+        <div class="profile-section-head">
+          <h2 class="section-title">Capturas</h2>
+          <a href="gallery.html">Ver galeria</a>
+        </div>
+        <div class="profile-image-grid" aria-label="Capturas do perfil">
+          <button type="button" data-preview="src/images/acai-toppings.jpg" data-title="Acai com toppings"><img src="src/images/acai-toppings.jpg" alt="Acai com toppings"></button>
+          <button type="button" data-preview="src/images/camera-vision.jpeg" data-title="Leitura pela camera"><img src="src/images/camera-vision.jpeg" alt="Leitura pela camera"></button>
+          <button type="button" data-preview="src/images/cacau.jpg" data-title="Cacau"><img src="src/images/cacau.jpg" alt="Cacau"></button>
+          <button type="button" data-preview="src/images/feijoada.webp" data-title="Feijoada"><img src="src/images/feijoada.webp" alt="Feijoada"></button>
+          <button type="button" data-preview="src/images/lirio.jpg" data-title="Lirio"><img src="src/images/lirio.jpg" alt="Lirio"></button>
+          <button type="button" data-preview="src/images/macarrao.webp" data-title="Macarrao"><img src="src/images/macarrao.webp" alt="Macarrao"></button>
+        </div>
+      </section>
+    </main>
+
+    <div class="profile-modal" data-profile-modal hidden>
+      <div class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Fechar"><img class="icon" src="src/icons/close.svg" alt="" aria-hidden="true"></button>
+        <img class="modal-image" data-modal-image src="src/images/acai-toppings.jpg" alt="">
+        <h2 id="profile-modal-title" data-modal-title>Captura</h2>
+        <p data-modal-detail>Detalhes da captura selecionada.</p>
+      </div>
+    </div>
+
+    <nav class="bottom-navigation">
+      <a href="index.html"><img class="icon" src="src/icons/home.svg" alt="" aria-hidden="true">Inicio</a>
+      <a href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Camera</a>
+      <a href="nutritional-result.html"><img class="icon" src="src/icons/analytics.svg" alt="" aria-hidden="true">Resultado</a>
+      <a href="create-post.html"><img class="icon" src="src/icons/add.svg" alt="" aria-hidden="true">Post</a>
+      <a href="communities.html"><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true">Comunidades</a>
+      <a href="gallery.html"><img class="icon" src="src/icons/photo_library.svg" alt="" aria-hidden="true">Galeria</a>
+      <a class="active" href="profile.html"><span class="nav-avatar">JV</span>Perfil</a>
+    </nav>
+  </div>
+
+  <script>
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const modal = document.querySelector("[data-profile-modal]");
+    const modalImage = document.querySelector("[data-modal-image]");
+    const modalTitle = document.querySelector("[data-modal-title]");
+    const modalDetail = document.querySelector("[data-modal-detail]");
+
+    document.querySelectorAll("[data-count-to]").forEach((stat) => {
+      const target = Number(stat.dataset.countTo);
+
+      if (reduceMotion) {
+        stat.textContent = target;
+        return;
+      }
+
+      let frame = 0;
+      const totalFrames = 42;
+      const tick = () => {
+        frame += 1;
+        const progress = 1 - Math.pow(1 - frame / totalFrames, 3);
+        stat.textContent = Math.round(target * progress);
+        if (frame < totalFrames) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+
+    function openModal({ title, detail, image }) {
+      modalTitle.textContent = title;
+      modalDetail.textContent = detail;
+      modalImage.hidden = !image;
+      if (image) {
+        modalImage.src = image;
+        modalImage.alt = title;
+      }
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll("[data-open-achievement]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openModal({
+          title: button.dataset.openAchievement,
+          detail: button.dataset.detail || "Perfil em destaque por consistencia nas capturas.",
+          image: ""
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-preview]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openModal({
+          title: button.dataset.title,
+          detail: "Captura salva no perfil. Toque em compartilhar na galeria para enviar para comunidades.",
+          image: button.dataset.preview
+        });
+      });
+    });
+
+    document.querySelector("[data-close-modal]").addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) closeModal();
+    });
+  </script>
+</body>
+</html>
