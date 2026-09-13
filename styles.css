@@ -82,6 +82,7 @@ button {
   max-width: 420px;
   min-height: 100vh;
   margin: 0 auto;
+  padding-bottom: 76px;
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 25%, rgba(141, 48, 230, .12), transparent 34%),
@@ -570,20 +571,34 @@ button {
   left: 50%;
   bottom: 0;
   z-index: 20;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: min(100%, 430px);
-  height: 58px;
+  height: 64px;
+  padding: 8px 10px;
   transform: translateX(-50%);
   border-top: 1px solid #211b28;
   background: #08050d;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.bottom-navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .bottom-navigation a {
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
   align-content: center;
+  min-width: 64px;
+  height: 46px;
   gap: 3px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
   color: #788396;
   font-size: 11px;
 }
@@ -593,6 +608,8 @@ button {
 }
 
 .bottom-navigation .active {
+  border-color: rgba(193, 91, 255, .28);
+  background: rgba(82, 32, 116, .34);
   color: #c15bff;
 }
 
@@ -1157,7 +1174,7 @@ textarea::placeholder {
 
 .communities-content {
   padding-top: 18px;
-  padding-bottom: 24px;
+  padding-bottom: 86px;
 }
 
 .communities-content .section-title {
@@ -1304,6 +1321,48 @@ textarea::placeholder {
   font-weight: 900;
 }
 
+.gallery-page {
+  background:
+    radial-gradient(circle at 84% 0%, rgba(169, 60, 255, .16), transparent 28%),
+    #08050e;
+}
+
+.gallery-header {
+  padding: 24px 18px 0;
+}
+
+.gallery-header h1 {
+  margin: 18px 0 0;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.gallery-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.gallery-content {
+  padding: 24px 14px 86px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #34293d;
+  border-radius: 8px;
+  background: #15111b;
+}
+
 @media (max-width: 340px) {
   .hero-copy h1 {
     font-size: 34px;
@@ -1313,11 +1372,8 @@ textarea::placeholder {
     grid-template-columns: 80px 1fr 28px;
   }
 
-  .bottom-navigation {
-    height: 52px;
-  }
-
   .bottom-navigation a {
     font-size: 10px;
+    min-width: 58px;
   }
 }
