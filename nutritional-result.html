@@ -36,13 +36,14 @@
 
       <section class="tag-row"><span>Rotulo legivel</span><span>Resumo rapido</span><span>Salvar depois</span></section>
 
-      <section class="info-card">
-        <h2><span class="violet">&#10022;</span> Insights da IA</h2>
+      <section class="info-card ai-card">
+        <h2><img class="icon ai-icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true"> Insights da IA</h2>
         <ul class="insights">
           <li>A imagem parece mostrar uma tigela de acai com granola e fruta.</li>
           <li>Boa opcao para energia rapida, mas vale conferir acucares adicionados.</li>
           <li>Se a foto for de um rotulo, aproxime a camera para ler ingredientes pequenos.</li>
         </ul>
+        <button class="ai-review-button" type="button" data-result-review>Ver review completo</button>
       </section>
 
       <section class="nutrition-score-card">
@@ -61,13 +62,37 @@
 
     <nav class="bottom-navigation">
       <a href="index.html"><img class="icon" src="src/icons/home.svg" alt="" aria-hidden="true">Inicio</a>
-      <a href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Camera</a>
-      <a class="active" href="nutritional-result.html"><img class="icon" src="src/icons/analytics.svg" alt="" aria-hidden="true">Resultado</a>
+      <a class="active" href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Camera</a>
       <a href="create-post.html"><img class="icon" src="src/icons/add.svg" alt="" aria-hidden="true">Post</a>
       <a href="communities.html"><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true">Comunidades</a>
       <a href="gallery.html"><img class="icon" src="src/icons/photo_library.svg" alt="" aria-hidden="true">Galeria</a>
       <a href="profile.html"><span class="nav-avatar">JV</span>Perfil</a>
     </nav>
   </div>
+  <div class="profile-modal" data-result-modal hidden>
+    <div class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="result-modal-title">
+      <button class="modal-close" type="button" data-close-result-modal aria-label="Fechar"><img class="icon" src="src/icons/close.svg" alt="" aria-hidden="true"></button>
+      <img class="modal-ai-icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">
+      <h2 id="result-modal-title">Review da IA</h2>
+      <p>Acai com toppings: captura com boa definicao de textura, cores e ingredientes visiveis. A IA identifica uma base de acai com granola e frutas, provavelmente rica em energia rapida. Pontos de atencao: conferir tamanho da porcao, acucares adicionados e toppings extras antes de comparar com outras opcoes.</p>
+    </div>
+  </div>
+  <script>
+    const resultModal = document.querySelector("[data-result-modal]");
+    document.querySelector("[data-result-review]").addEventListener("click", () => {
+      resultModal.hidden = false;
+      document.body.classList.add("modal-open");
+    });
+    document.querySelector("[data-close-result-modal]").addEventListener("click", () => {
+      resultModal.hidden = true;
+      document.body.classList.remove("modal-open");
+    });
+    resultModal.addEventListener("click", (event) => {
+      if (event.target === resultModal) {
+        resultModal.hidden = true;
+        document.body.classList.remove("modal-open");
+      }
+    });
+  </script>
 </body>
 </html>

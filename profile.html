@@ -67,12 +67,12 @@
           <a href="gallery.html">Ver galeria</a>
         </div>
         <div class="profile-image-grid" aria-label="Capturas do perfil">
-          <button type="button" data-preview="src/images/acai-toppings.jpg" data-title="Acai com toppings"><img src="src/images/acai-toppings.jpg" alt="Acai com toppings"></button>
-          <button type="button" data-preview="src/images/camera-vision.jpeg" data-title="Leitura pela camera"><img src="src/images/camera-vision.jpeg" alt="Leitura pela camera"></button>
-          <button type="button" data-preview="src/images/cacau.jpg" data-title="Cacau"><img src="src/images/cacau.jpg" alt="Cacau"></button>
-          <button type="button" data-preview="src/images/feijoada.webp" data-title="Feijoada"><img src="src/images/feijoada.webp" alt="Feijoada"></button>
-          <button type="button" data-preview="src/images/lirio.jpg" data-title="Lirio"><img src="src/images/lirio.jpg" alt="Lirio"></button>
-          <button type="button" data-preview="src/images/macarrao.webp" data-title="Macarrao"><img src="src/images/macarrao.webp" alt="Macarrao"></button>
+          <button type="button" data-preview="src/images/acai-toppings.jpg" data-title="Acai com toppings"><img src="src/images/acai-toppings.jpg" alt="Acai com toppings"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
+          <button type="button" data-preview="src/images/camera-vision.jpeg" data-title="Leitura pela camera"><img src="src/images/camera-vision.jpeg" alt="Leitura pela camera"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
+          <button type="button" data-preview="src/images/cacau.jpg" data-title="Cacau"><img src="src/images/cacau.jpg" alt="Cacau"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
+          <button type="button" data-preview="src/images/feijoada.webp" data-title="Feijoada"><img src="src/images/feijoada.webp" alt="Feijoada"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
+          <button type="button" data-preview="src/images/lirio.jpg" data-title="Lirio"><img src="src/images/lirio.jpg" alt="Lirio"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
+          <button type="button" data-preview="src/images/macarrao.webp" data-title="Macarrao"><img src="src/images/macarrao.webp" alt="Macarrao"><span class="ai-review-chip"><img class="icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true">AI review</span></button>
         </div>
       </section>
     </main>
@@ -81,7 +81,7 @@
       <div class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
         <button class="modal-close" type="button" data-close-modal aria-label="Fechar"><img class="icon" src="src/icons/close.svg" alt="" aria-hidden="true"></button>
         <img class="modal-image" data-modal-image src="src/images/acai-toppings.jpg" alt="">
-        <h2 id="profile-modal-title" data-modal-title>Captura</h2>
+        <h2 id="profile-modal-title"><img class="icon ai-icon" src="src/icons/ai-icon.png" alt="" aria-hidden="true"><span data-modal-title>Captura</span></h2>
         <p data-modal-detail>Detalhes da captura selecionada.</p>
       </div>
     </div>
@@ -89,7 +89,6 @@
     <nav class="bottom-navigation">
       <a href="index.html"><img class="icon" src="src/icons/home.svg" alt="" aria-hidden="true">Inicio</a>
       <a href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Camera</a>
-      <a href="nutritional-result.html"><img class="icon" src="src/icons/analytics.svg" alt="" aria-hidden="true">Resultado</a>
       <a href="create-post.html"><img class="icon" src="src/icons/add.svg" alt="" aria-hidden="true">Post</a>
       <a href="communities.html"><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true">Comunidades</a>
       <a href="gallery.html"><img class="icon" src="src/icons/photo_library.svg" alt="" aria-hidden="true">Galeria</a>
@@ -135,6 +134,18 @@
       document.body.classList.add("modal-open");
     }
 
+    function generatedReview(title) {
+      const reviews = {
+        "Acai com toppings": "A IA identifica uma tigela de acai com granola e frutas. Caracteristicas: cores roxas intensas, textura cremosa e toppings crocantes. Bom para revisar ingredientes e comparar quantidade de acucar.",
+        "Leitura pela camera": "A IA detecta uma cena de camera ativa, com foco em leitura visual. Caracteristicas: ambiente escuro, area central de escaneamento e boa composicao para demonstrar a funcao principal.",
+        "Cacau": "A IA classifica como cacau ou ingrediente natural. Caracteristicas: tons terrosos, origem alimentar e bom item para catalogar receitas, produtos ou curiosidades.",
+        "Feijoada": "A IA identifica um prato de feijoada. Caracteristicas: refeicao brasileira densa, alto contraste entre feijao e acompanhamentos, ideal para registro de comida e porcao.",
+        "Lirio": "A IA identifica uma flor do tipo lirio. Caracteristicas: petalas delicadas, valor ornamental e possivel alerta de cuidado se houver animais em casa.",
+        "Macarrao": "A IA identifica uma refeicao de massa. Caracteristicas: prato principal, textura de macarrao visivel e bom candidato para comparar molho, porcao e ingredientes."
+      };
+      return reviews[title] || `${title}: a IA revisaria objeto principal, cores, textura e contexto para transformar a captura em uma descricao mais util.`;
+    }
+
     function closeModal() {
       modal.hidden = true;
       document.body.classList.remove("modal-open");
@@ -154,7 +165,7 @@
       button.addEventListener("click", () => {
         openModal({
           title: button.dataset.title,
-          detail: "Captura salva no perfil. Toque em compartilhar na galeria para enviar para comunidades.",
+          detail: generatedReview(button.dataset.title),
           image: button.dataset.preview
         });
       });
