@@ -19,9 +19,9 @@
       <section class="profile-hero reveal-on-load">
         <img class="profile-avatar" src="src/images/profile-pic.jpeg" alt="Foto de perfil Jovis Explorer">
         <div class="profile-copy">
-          <p class="eyebrow">Perfil publico</p>
+          <p class="eyebrow">Perfil público</p>
           <h1>Jovis Explorer</h1>
-          <p>Capturas do cotidiano, comparacoes uteis e descobertas feitas com a camera.</p>
+          <p>Capturas do cotidiano, comparações úteis e descobertas feitas com a câmera.</p>
         </div>
       </section>
 
@@ -43,17 +43,17 @@
       <section class="profile-achievements reveal-on-load">
         <h2 class="section-title">Conquistas</h2>
         <div class="achievement-row">
-          <button type="button" data-open-achievement="Explorador visual" data-detail="Voce completou 100 scans e desbloqueou resumos mais detalhados.">
+          <button type="button" data-open-achievement="Explorador visual" data-detail="Você completou 100 scans e desbloqueou resumos mais detalhados.">
             <span><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true"></span>
             <strong>Explorador visual</strong>
             <small>100+ scans</small>
           </button>
-          <button type="button" data-open-achievement="Comparador esperto" data-detail="Voce salvou comparacoes de rotulos, produtos e imagens para revisar depois.">
+          <button type="button" data-open-achievement="Comparador esperto" data-detail="Você salvou comparações de rótulos, produtos e imagens para revisar depois.">
             <span><img class="icon" src="src/icons/analytics.svg" alt="" aria-hidden="true"></span>
             <strong>Comparador esperto</strong>
             <small>38 salvos</small>
           </button>
-          <button type="button" data-open-achievement="Comunidade ativa" data-detail="Voce compartilhou descobertas e recebeu respostas da comunidade.">
+          <button type="button" data-open-achievement="Comunidade ativa" data-detail="Você compartilhou descobertas e recebeu respostas da comunidade.">
             <span><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true"></span>
             <strong>Comunidade ativa</strong>
             <small>12 posts</small>
@@ -87,8 +87,8 @@
     </div>
 
     <nav class="bottom-navigation">
-      <a href="index.html"><img class="icon" src="src/icons/home.svg" alt="" aria-hidden="true">Inicio</a>
-      <a href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Camera</a>
+      <a href="index.html"><img class="icon" src="src/icons/home.svg" alt="" aria-hidden="true">Início</a>
+      <a href="camera-scan.html"><img class="icon" src="src/icons/photo_camera.svg" alt="" aria-hidden="true">Câmera</a>
       <a href="create-post.html"><img class="icon" src="src/icons/add.svg" alt="" aria-hidden="true">Post</a>
       <a href="communities.html"><img class="icon" src="src/icons/groups.svg" alt="" aria-hidden="true">Comunidades</a>
       <a href="gallery.html"><img class="icon" src="src/icons/photo_library.svg" alt="" aria-hidden="true">Galeria</a>
@@ -136,14 +136,14 @@
 
     function generatedReview(title) {
       const reviews = {
-        "Acai com toppings": "A IA identifica uma tigela de acai com granola e frutas. Caracteristicas: cores roxas intensas, textura cremosa e toppings crocantes. Bom para revisar ingredientes e comparar quantidade de acucar.",
-        "Leitura pela camera": "A IA detecta uma cena de camera ativa, com foco em leitura visual. Caracteristicas: ambiente escuro, area central de escaneamento e boa composicao para demonstrar a funcao principal.",
-        "Cacau": "A IA classifica como cacau ou ingrediente natural. Caracteristicas: tons terrosos, origem alimentar e bom item para catalogar receitas, produtos ou curiosidades.",
-        "Feijoada": "A IA identifica um prato de feijoada. Caracteristicas: refeicao brasileira densa, alto contraste entre feijao e acompanhamentos, ideal para registro de comida e porcao.",
-        "Lirio": "A IA identifica uma flor do tipo lirio. Caracteristicas: petalas delicadas, valor ornamental e possivel alerta de cuidado se houver animais em casa.",
-        "Macarrao": "A IA identifica uma refeicao de massa. Caracteristicas: prato principal, textura de macarrao visivel e bom candidato para comparar molho, porcao e ingredientes."
+        "Acai com toppings": "A IA identifica uma tigela de açaí com granola e frutas. Características: cores roxas intensas, textura cremosa e toppings crocantes. Bom para revisar ingredientes e comparar quantidade de açúcar.",
+        "Leitura pela camera": "A IA detecta uma cena de camera ativa, com foco em leitura visual. Características: ambiente escuro, área central de escaneamento e boa composição para demonstrar a função principal.",
+        "Cacau": "A IA classifica como cacau ou ingrediente natural. Características: tons terrosos, origem alimentar e bom item para catalogar receitas, produtos ou curiosidades.",
+        "Feijoada": "A IA identifica um prato de feijoada. Características: refeição brasileira densa, alto contraste entre feijão e acompanhamentos, ideal para registro de comida e porção.",
+        "Lirio": "A IA identifica uma flor do tipo lirio. Características: petalas delicadas, valor ornamental e possível alerta de cuidado se houver animais em casa.",
+        "Macarrao": "A IA identifica uma refeição de massa. Características: prato principal, textura de macarrão visível e bom candidato para comparar molho, porção e ingredientes."
       };
-      return reviews[title] || `${title}: a IA revisaria objeto principal, cores, textura e contexto para transformar a captura em uma descricao mais util.`;
+      return reviews[title] || `${title}: a IA revisaria objeto principal, cores, textura e contexto para transformar a captura em uma descrição mais útil.`;
     }
 
     function closeModal() {
@@ -155,7 +155,7 @@
       button.addEventListener("click", () => {
         openModal({
           title: button.dataset.openAchievement,
-          detail: button.dataset.detail || "Perfil em destaque por consistencia nas capturas.",
+          detail: button.dataset.detail || "Perfil em destaque por consistência nas capturas.",
           image: ""
         });
       });
