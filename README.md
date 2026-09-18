@@ -90,7 +90,7 @@ Stack 100% web, escolhida para garantir compatibilidade máxima e entrega rápid
 
 O projeto é 100% front-end (HTML, CSS e JavaScript puro), então não é necessário instalar dependências ou configurar um back-end.
 
-### Opção 1 — Live Server (recomendado, via VSCode)
+### Live Server (recomendado, via VSCode)
 
 1. Clone o repositório:
    ```bash
@@ -105,13 +105,7 @@ O projeto é 100% front-end (HTML, CSS e JavaScript puro), então não é necess
 4. Clique com o botão direito no arquivo `index.html` e selecione **"Open with Live Server"**.
 5. O site abrirá automaticamente no navegador (geralmente em `http://127.0.0.1:5500`).
 
-### Opção 2 — Servidor HTTP simples (sem extensões)
 
-1. Clone o repositório (veja o passo acima).
-2. No terminal, dentro da pasta do projeto, rode:
-   ```bash
-   python3 -m http.server 8000
-   ```
 3. Acesse `http://localhost:8000` no navegador.
 
 ---
