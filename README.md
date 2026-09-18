@@ -55,7 +55,7 @@ Desafios, ranking semanal e um feed com descobertas de outros usuários da comun
 ### Galeria
 Todas as capturas recentes organizadas visualmente, para revisar e compartilhar quando quiser.
 
-<img src="./screenshots/gallery.png" alt="Galeria" width="280">
+<img src="./src/screenshots/gallery.png" alt="Galeria" width="280">
 
 ---
 
